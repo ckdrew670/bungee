@@ -1,0 +1,12 @@
+{
+    "name": "charlottedrew/bungee",
+    "description": "A string manipulation library",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Charlotte",
+            "email": "ckdrew670@hotmail.com"
+        }
+    ],
+    "require": {}
+}
