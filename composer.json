@@ -8,8 +8,15 @@
             "email": "ckdrew670@hotmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "illuminate/support": "^8.67"
+    },
     "require-dev": {
         "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bungee\\": "src/"
+        }
     }
 }
