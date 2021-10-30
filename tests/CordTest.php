@@ -19,8 +19,12 @@ class CordTest extends TestCase
         $this->assertEquals("Hello world", $this->str->joinUp('Hello', ' world'));
     }
 
+    public function testgoHalvesWithoutOptions() {
+        $this->assertEquals(['abcdef', 'ghijkl'], $this->str->goHalves('abcdefghijkl'));
+    }
+
     public function testgoHalves() {
-        $this->assertEquals(['Hello', 'World!'], $this->str->goHalves('Hello World!', 6, true));
+        $this->assertEquals(['Hello', 'Worlds!'], $this->str->goHalves('Hello Worlds!', 6, true));
     }
 
     public function testStickToFront() {
@@ -44,7 +48,7 @@ class CordTest extends TestCase
     }  
 
     public function testgetOuttaHereWithLongerString() {
-        $this->assertEquals('The quick brown fox', $this->str->getOuttaHere('The quick brown fox jumps', ' jumps'));
+        $this->assertEquals('The quick brown fox', $this->str->getOuttaHere('The quick jumps brown fox jumps', ' jumps'));
     } 
 
     public function testgetOuttaHereWithNumber() {

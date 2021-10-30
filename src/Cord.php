@@ -23,13 +23,13 @@ class Cord
 
     /* 
     * GO HALVES
-    * Split a string into two array items at a given character, option to remove the character where the strings are split
+    * Split a string into two array items at a given character, option to remove the character where the strings are split. Without options, string will be split in two exactly
     **/
 
-    public function goHalves($string, $splitter, $removeSplitter = false) : array
+    public function goHalves($string, $splitter = false, $removeSplitter = false) : array
     {
-        $strOne = $removeSplitter ? substr((substr($string, 0, $splitter)), 0, -1) : substr($string, 0, $splitter);
-        $strTwo = substr($string, $splitter);
+        $strOne = $splitter ? ($removeSplitter ? substr((substr($string, 0, $splitter)), 0, -1) : substr($string, 0, $splitter)) : substr($string, 0, strlen($string)/2);
+        $strTwo = $splitter ? substr($string, $splitter) : substr($string, strlen($string)/2);
         return array($strOne, $strTwo);
     }
 
