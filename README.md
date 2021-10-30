@@ -1,10 +1,12 @@
 # Bungee
 
-A Composer package for string manipulation. This is a project built for personal use to learn about creating composer packages and as a reminder of OOP.
+A Composer package for flexible string manipulation. 
+
+This is a project built for personal use to learn about creating composer packages and as a reminder of OOP.
 
 # How to install
 
-Coming soon ...
+Coming soon ... 
 
 # Wiki
 
