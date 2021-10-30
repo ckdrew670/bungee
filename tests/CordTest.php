@@ -18,4 +18,8 @@ class CordTest extends TestCase
     public function testSmoosh() {
         $this->assertEquals("Hello world", $this->str->smoosh('Hello', ' world'));
     }
+
+    public function testGoHalves() {
+        $this->assertEquals(['Hello', 'World!'], $this->str->goHalves('Hello World!', 6, true));
+    }
 }
