@@ -38,4 +38,8 @@ class CordTest extends TestCase
     public function testWhisper() {
         $this->assertEquals('hello world', $this->str->whisper('Hello woRld'));
     }
+
+    public function testIDontWantThis() {
+        $this->assertEquals('the quick brown fo', $this->str->iDontWantThis('The quick brown fox', 'x'));
+    }  
 }

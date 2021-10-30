@@ -72,4 +72,14 @@ class Cord
     {
         return strtolower($string);
     }
+
+     /* 
+    * I DONT WANT THIS
+    * Remove all instances of a given string or character, or remove a character/word based on placement in string
+    **/
+
+    public function iDontWantThis($string, $removeMe, $upper) : string
+    {
+        return is_string($removeMe) ? str_replace($removeMe, '', $string) : null;
+    }
 }
