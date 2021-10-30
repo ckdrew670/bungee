@@ -19,8 +19,8 @@ class CordTest extends TestCase
         $this->assertEquals("Hello world", $this->str->joinUp('Hello', ' world'));
     }
 
-    public function testSplitInTwo() {
-        $this->assertEquals(['Hello', 'World!'], $this->str->splitInTwo('Hello World!', 6, true));
+    public function testgoHalves() {
+        $this->assertEquals(['Hello', 'World!'], $this->str->goHalves('Hello World!', 6, true));
     }
 
     public function testStickToFront() {
