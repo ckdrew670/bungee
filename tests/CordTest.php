@@ -51,11 +51,11 @@ class CordTest extends TestCase
         $this->assertEquals('The uick brown fox', $this->str->getRidOfThis('The quick brown fox', 5));
     } 
 
-    public function testIDontWantThisWithNumberRange() {
-        $this->assertEquals('The brown fox', $this->str->iDontWantThis('The quick brown fox', 5, 10));
+    public function testgetRidOfThisWithNumberRange() {
+        $this->assertEquals('The brown fox', $this->str->getRidOfThis('The quick brown fox', 5, 10));
     } 
 
-    public function testIDontWantThisRemovesAllInstances() {
-        $this->assertEquals('The quick brwn fx', $this->str->iDontWantThis('The quick brown fox', 'o'));
+    public function testgetRidOfThisRemovesAllInstances() {
+        $this->assertEquals('The quick brwn fx', $this->str->getRidOfThis('The quick brown fox', 'o'));
     }
 }
