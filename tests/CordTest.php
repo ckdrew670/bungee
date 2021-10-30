@@ -40,6 +40,22 @@ class CordTest extends TestCase
     }
 
     public function testIDontWantThis() {
-        $this->assertEquals('the quick brown fo', $this->str->iDontWantThis('The quick brown fox', 'x'));
+        $this->assertEquals('The quick brown fo', $this->str->iDontWantThis('The quick brown fox', 'x'));
     }  
+
+    public function testIDontWantThisWithLongerString() {
+        $this->assertEquals('The quick brown fox', $this->str->iDontWantThis('The quick brown fox jumps', ' jumps'));
+    } 
+
+    public function testIDontWantThisWithNumber() {
+        $this->assertEquals('The uick brown fox', $this->str->iDontWantThis('The quick brown fox', 5));
+    } 
+
+    public function testIDontWantThisWithNumberRange() {
+        $this->assertEquals('The brown fox', $this->str->iDontWantThis('The quick brown fox', 5, 10));
+    } 
+
+    public function testIDontWantThisRemovesAllInstances() {
+        $this->assertEquals('The quick brwn fx', $this->str->iDontWantThis('The quick brown fox', 'o'));
+    }
 }
