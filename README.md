@@ -8,4 +8,4 @@ Coming soon ...
 
 # Wiki
 
-See wiki for how to use the Bungee Cord Methods
+See the [Bungee Wiki](https://github.com/ckdrew670/bungee/wiki/Bungee-Wiki) for how to use the Bungee Cord Methods
