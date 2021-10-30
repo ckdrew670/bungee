@@ -22,4 +22,12 @@ class CordTest extends TestCase
     public function testGoHalves() {
         $this->assertEquals(['Hello', 'World!'], $this->str->goHalves('Hello World!', 6, true));
     }
+
+    public function testStickToFront() {
+        $this->assertEquals('Hello, Hello world', $this->str->stickToFront('Hello world', 'Hello, '));
+    }
+
+    public function testStickToEnd() {
+        $this->assertEquals('Hello worldy', $this->str->stickToEnd('Hello world', 'y'));
+    }
 }
