@@ -12,21 +12,21 @@ class Cord
     }
 
     /* 
-    * JOIN WORDS 
+    * JOIN UP 
     * Concatenate two strings
     **/
 
-    public function joinWords($first, $second) : string
+    public function joinUp($first, $second) : string
     {
         return $first . $second;
     }
 
     /* 
-    * GO HALVES
+    * SPLIT IN TWO
     * Split a string into two array items at a given character, option to remove the character where the strings are split
     **/
 
-    public function goHalves($string, $splitter, $removeSplitter = false) : array
+    public function splitInTwo($string, $splitter, $removeSplitter = false) : array
     {
         $strOne = $removeSplitter ? substr((substr($string, 0, $splitter)), 0, -1) : substr($string, 0, $splitter);
         $strTwo = substr($string, $splitter);
@@ -74,11 +74,11 @@ class Cord
     }
 
      /* 
-    * GET RID OF THIS
+    * GET OUTTA HERE
     * Remove all instances of a given string or character, or remove a character/word based on placement in string
     **/
 
-    public function getRidOfThis($string, $removeMe, $upper = false) : string
+    public function getOuttaHere($string, $removeMe, $upper = false) : string
     {
         return is_string($removeMe) ? str_replace($removeMe, '', $string) : ($upper ? substr($string, 0, $removeMe - 1) . substr($string, $upper, strlen($string) - $removeMe) : substr($string, 0, $removeMe - 1) . substr($string, $removeMe, strlen($string) - $removeMe));
     }

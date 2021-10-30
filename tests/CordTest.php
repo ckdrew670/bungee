@@ -15,12 +15,12 @@ class CordTest extends TestCase
         $this->str = new Cord();
     }
 
-    public function testJoinWords() {
-        $this->assertEquals("Hello world", $this->str->joinWords('Hello', ' world'));
+    public function testJoinUp() {
+        $this->assertEquals("Hello world", $this->str->joinUp('Hello', ' world'));
     }
 
-    public function testGoHalves() {
-        $this->assertEquals(['Hello', 'World!'], $this->str->goHalves('Hello World!', 6, true));
+    public function testSplitInTwo() {
+        $this->assertEquals(['Hello', 'World!'], $this->str->splitInTwo('Hello World!', 6, true));
     }
 
     public function testStickToFront() {
@@ -39,23 +39,23 @@ class CordTest extends TestCase
         $this->assertEquals('hello world', $this->str->whisper('Hello woRld'));
     }
 
-    public function testgetRidOfThis() {
-        $this->assertEquals('The quick brown fo', $this->str->getRidOfThis('The quick brown fox', 'x'));
+    public function testgetOuttaHere() {
+        $this->assertEquals('The quick brown fo', $this->str->getOuttaHere('The quick brown fox', 'x'));
     }  
 
-    public function testgetRidOfThisWithLongerString() {
-        $this->assertEquals('The quick brown fox', $this->str->getRidOfThis('The quick brown fox jumps', ' jumps'));
+    public function testgetOuttaHereWithLongerString() {
+        $this->assertEquals('The quick brown fox', $this->str->getOuttaHere('The quick brown fox jumps', ' jumps'));
     } 
 
-    public function testgetRidOfThisWithNumber() {
-        $this->assertEquals('The uick brown fox', $this->str->getRidOfThis('The quick brown fox', 5));
+    public function testgetOuttaHereWithNumber() {
+        $this->assertEquals('The uick brown fox', $this->str->getOuttaHere('The quick brown fox', 5));
     } 
 
-    public function testgetRidOfThisWithNumberRange() {
-        $this->assertEquals('The brown fox', $this->str->getRidOfThis('The quick brown fox', 5, 10));
+    public function testgetOuttaHereWithNumberRange() {
+        $this->assertEquals('The brown fox', $this->str->getOuttaHere('The quick brown fox', 5, 10));
     } 
 
-    public function testgetRidOfThisRemovesAllInstances() {
-        $this->assertEquals('The quick brwn fx', $this->str->getRidOfThis('The quick brown fox', 'o'));
+    public function testgetOuttaHereRemovesAllInstances() {
+        $this->assertEquals('The quick brwn fx', $this->str->getOuttaHere('The quick brown fox', 'o'));
     }
 }
