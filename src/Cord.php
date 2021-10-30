@@ -74,11 +74,11 @@ class Cord
     }
 
      /* 
-    * I DONT WANT THIS
+    * GET RID OF THIS
     * Remove all instances of a given string or character, or remove a character/word based on placement in string
     **/
 
-    public function iDontWantThis($string, $removeMe, $upper = false) : string
+    public function getRidOfThis($string, $removeMe, $upper = false) : string
     {
         return is_string($removeMe) ? str_replace($removeMe, '', $string) : ($upper ? substr($string, 0, $removeMe - 1) . substr($string, $upper, strlen($string) - $removeMe) : substr($string, 0, $removeMe - 1) . substr($string, $removeMe, strlen($string) - $removeMe));
     }

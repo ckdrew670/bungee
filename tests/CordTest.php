@@ -39,16 +39,16 @@ class CordTest extends TestCase
         $this->assertEquals('hello world', $this->str->whisper('Hello woRld'));
     }
 
-    public function testIDontWantThis() {
-        $this->assertEquals('The quick brown fo', $this->str->iDontWantThis('The quick brown fox', 'x'));
+    public function testgetRidOfThis() {
+        $this->assertEquals('The quick brown fo', $this->str->getRidOfThis('The quick brown fox', 'x'));
     }  
 
-    public function testIDontWantThisWithLongerString() {
-        $this->assertEquals('The quick brown fox', $this->str->iDontWantThis('The quick brown fox jumps', ' jumps'));
+    public function testgetRidOfThisWithLongerString() {
+        $this->assertEquals('The quick brown fox', $this->str->getRidOfThis('The quick brown fox jumps', ' jumps'));
     } 
 
-    public function testIDontWantThisWithNumber() {
-        $this->assertEquals('The uick brown fox', $this->str->iDontWantThis('The quick brown fox', 5));
+    public function testgetRidOfThisWithNumber() {
+        $this->assertEquals('The uick brown fox', $this->str->getRidOfThis('The quick brown fox', 5));
     } 
 
     public function testIDontWantThisWithNumberRange() {
