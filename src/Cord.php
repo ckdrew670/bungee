@@ -12,11 +12,11 @@ class Cord
     }
 
     /* 
-    * SMOOSH 
+    * JOIN WORDS 
     * Concatenate two strings
     **/
 
-    public function smoosh($first, $second) : string
+    public function joinWords($first, $second) : string
     {
         return $first . $second;
     }
@@ -51,5 +51,25 @@ class Cord
     public function stickToEnd($string, $end) : string
     {
         return $string . $end;
+    }
+
+    /* 
+    * SHOUT
+    * Make string uppercase
+    **/
+
+    public function shout($string) : string
+    {
+        return strtoupper($string);
+    }
+
+    /* 
+    * WHISPER
+    * Make string lowercase
+    **/
+
+    public function whisper($string) : string
+    {
+        return strtolower($string);
     }
 }

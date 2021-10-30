@@ -15,8 +15,8 @@ class CordTest extends TestCase
         $this->str = new Cord();
     }
 
-    public function testSmoosh() {
-        $this->assertEquals("Hello world", $this->str->smoosh('Hello', ' world'));
+    public function testJoinWords() {
+        $this->assertEquals("Hello world", $this->str->joinWords('Hello', ' world'));
     }
 
     public function testGoHalves() {
@@ -29,5 +29,13 @@ class CordTest extends TestCase
 
     public function testStickToEnd() {
         $this->assertEquals('Hello worldy', $this->str->stickToEnd('Hello world', 'y'));
+    }
+
+    public function testShout() {
+        $this->assertEquals('HELLO WORLD', $this->str->shout('Hello world'));
+    }
+
+    public function testWhisper() {
+        $this->assertEquals('hello world', $this->str->whisper('Hello woRld'));
     }
 }
