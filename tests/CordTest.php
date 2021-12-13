@@ -62,4 +62,12 @@ class CordTest extends TestCase
     public function testgetOuttaHereRemovesAllInstances() {
         $this->assertEquals('The quick brwn fx', $this->str->getOuttaHere('The quick brown fox', 'o'));
     }
+
+    public function testCapitalise() {
+        $this->assertEquals('Hello world', $this->str->capitalise('hello world'));
+    }
+
+    public function testCapitaliseAll() {
+        $this->assertEquals('Hello There World', $this->str->capitalise('hello there world', true));
+    }
 }
