@@ -70,4 +70,16 @@ class CordTest extends TestCase
     public function testCapitaliseAll() {
         $this->assertEquals('Hello There World', $this->str->capitalise('hello there world', true));
     }
+
+    public function testCamelise() {
+        $this->assertEquals('helloWorld', $this->str->camelise('Hello World'));
+    }
+
+    public function testCameliseNotCapitals() {
+        $this->assertEquals('helloThereWorld', $this->str->camelise('Hello there world'));
+    }
+
+    public function testCameliseWithSnakes() {
+        $this->assertEquals('helloWorld', $this->str->camelise('helloWorld'));
+    }
 }

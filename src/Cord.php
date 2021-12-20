@@ -73,7 +73,7 @@ class Cord
         return strtolower($string);
     }
 
-     /* 
+    /*
     * GET OUTTA HERE
     * Remove all instances of a given string or character, or remove a character/word based on placement in string
     **/
@@ -83,7 +83,7 @@ class Cord
         return is_string($removeMe) ? str_replace($removeMe, '', $string) : ($upper ? substr($string, 0, $removeMe - 1) . substr($string, $upper, strlen($string) - $removeMe) : substr($string, 0, $removeMe - 1) . substr($string, $removeMe, strlen($string) - $removeMe));
     }
 
-     /* 
+    /*
     * CAPITALISE
     * Capitalise first letter of a string. Second option passed true or false allows you to capitalise all words in the string
     **/
@@ -91,5 +91,16 @@ class Cord
     public function capitalise($string, $all = false) : string
     {
         return $all ? ucwords($string) : ucfirst($string);
+    }
+
+    /*
+    * CAMELISE
+    * Make a string camel case
+    **/
+
+    public function camelise($string) : string
+    {
+        $camelised = str_replace(" ", "", lcfirst(ucwords(($string))));
+        return $camelised;
     }
 }
