@@ -6,7 +6,9 @@ This is a project built for personal use to learn about creating composer packag
 
 # How to install
 
-Coming soon ... 
+Assuming you have Composer installed, in your project root (or where your composer.json file is located) run: 
+
+`composer require charlottedrew/bungee`
 
 # Wiki
 
