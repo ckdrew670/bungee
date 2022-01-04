@@ -71,15 +71,31 @@ class CordTest extends TestCase
         $this->assertEquals('Hello There World', $this->str->capitalise('hello there world', true));
     }
 
-    public function testCamelise() {
-        $this->assertEquals('helloWorld', $this->str->camelise('Hello World'));
+    public function testCamel() {
+        $this->assertEquals('helloWorld', $this->str->camel('Hello World'));
     }
 
-    public function testCameliseNotCapitals() {
-        $this->assertEquals('helloThereWorld', $this->str->camelise('Hello there world'));
+    public function testCamelNotCapitals() {
+        $this->assertEquals('helloWorld', $this->str->camel('hello_world'));
     }
 
-    public function testCameliseWithSnakes() {
-        $this->assertEquals('helloWorld', $this->str->camelise('helloWorld'));
+    public function testCamelWithSnakes() {
+        $this->assertEquals('helloWorld', $this->str->camel('hello-world'));
+    }
+
+    public function testContains() {
+        $this->assertEquals(true, $this->str->contains('Hey there world', 'there'));
+    }
+
+    public function testContainsWithMultiple() {
+        $this->assertEquals(true, $this->str->contains('Hey there world', ['there', 'world']));
+    }
+
+    public function testContainsWithMultipleChars() {
+        $this->assertEquals(true, $this->str->contains('Hey there world', ['d', 'e']));
+    }
+
+    public function testContainsWithFail() {
+        $this->assertEquals(false, $this->str->contains('Hey there world', 'donkey'));
     }
 }

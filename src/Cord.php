@@ -1,6 +1,7 @@
 <?php
 
 namespace Bungee;
+use Illuminate\Support\Str;
 
 class Cord
 {
@@ -94,13 +95,23 @@ class Cord
     }
 
     /*
-    * CAMELISE
+    * CAMEL
     * Make a string camel case
     **/
 
-    public function camelise($string) : string
+    public function camel($string) : string
     {
-        $camelised = str_replace(" ", "", lcfirst(ucwords(($string))));
+        $camelised = Str::camel($string);
         return $camelised;
+    }
+
+    /*
+    * CONTAINS
+    * Check if a string contains a substring
+    **/
+
+    public function contains($string, $substrings) : string
+    {
+        return Str::contains($string, $substrings);
     }
 }
