@@ -114,4 +114,24 @@ class CordTest extends TestCase
     public function testKebabWithSnake() {
         $this->assertEquals('hello-there-world', $this->str->kebab('hello_there_world'));
     }
+
+    public function testLength() {
+        $this->assertEquals(11, $this->str->length('hello world'));
+    }
+
+    public function testExcerpt() {
+        $this->assertEquals('The quick brown fox jumps over ...', $this->str->excerpt('The quick brown fox jumps over the lazy dog', 30));
+    }
+
+    public function testExcerptWithDifferentAppend() {
+        $this->assertEquals('The quick brown fox jumps over.', $this->str->excerpt('The quick brown fox jumps over the lazy dog', 30, '.'));
+    }
+
+    public function testPlural() {
+        $this->assertEquals('foxes', $this->str->plural('fox'));
+    }
+
+    public function testSingular() {
+        $this->assertEquals('child', $this->str->singular('children'));
+    }
 }

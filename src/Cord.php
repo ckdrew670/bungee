@@ -132,4 +132,44 @@ class Cord
             return Str::kebab($string);
         }
     }
+
+    /*
+    * LENGTH
+    * Returns the length of a string
+    **/
+
+    public function length($string) : string
+    {   
+        return strlen($string);
+    }
+
+    /*
+    * EXCERPT
+    * Truncates a string to a given number of characters with option to add a custom appended string (default ...)
+    **/
+
+    public function excerpt($string, $limit, $after = ' ...') : string
+    {   
+        return Str::limit($string, $limit, $after);
+    }
+
+     /*
+    * PLURAL
+    * Pluralises a string
+    **/
+
+    public function plural($string) : string
+    {   
+        return Str::plural($string);
+    }
+
+     /*
+    * SINGULAR
+    * Singularises a string
+    **/
+
+    public function singular($string) : string
+    {   
+        return Str::singular($string);
+    }
 }
