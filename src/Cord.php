@@ -39,8 +39,11 @@ class Cord
     * Prepend a string to another string
     **/
 
-    public function prepend($string, $front) : string
+    public function prepend($string, $front, $check = false) : string
     {
+        if($check) {
+            return Str::start($string, $front);
+        }
         return $front . $string;
     }
 
@@ -49,8 +52,11 @@ class Cord
     * Append a string to another string
     **/
 
-    public function append($string, $end) : string
+    public function append($string, $end, $check = false) : string
     {
+        if($check) {
+            return Str::finish($string, $end);
+        }
         return $string . $end;
     }
 

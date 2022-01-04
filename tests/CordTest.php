@@ -178,4 +178,12 @@ class CordTest extends TestCase
     public function testSnakeWithCamel() {
         $this->assertEquals('hello_there_world', $this->str->snake('HelloThereWorld'));
     }
+
+    public function testAppendWithCheck() {
+        $this->assertEquals('/path/to/file/', $this->str->append('/path/to', '/file/', true));
+    }
+
+    public function testPrependWithCheck() {
+        $this->assertEquals('/path/to/file/', $this->str->append('/path/to/file/', '/', true));
+    }
 }
