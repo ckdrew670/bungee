@@ -172,4 +172,27 @@ class Cord
     {   
         return Str::singular($string);
     }
+
+    /*
+    * WORDLIMIT
+    * Truncates a string to a given number of words with option to add a custom appended string (default ...)
+    **/
+
+    public function wordLimit($string, $limit, $after = ' ...') : string
+    {   
+        $strArray = explode(' ', $string);
+        $clipped = array_slice($strArray, 0, $limit, true);
+        $excerpt = implode(' ', $clipped) . $after;
+        return $excerpt;
+    }
+
+    /*
+    * WORDCOUNT
+    * Returns the number of words in a string
+    **/
+
+    public function wordCount($string) : string
+    {   
+        return str_word_count($string);
+    }
 }

@@ -134,4 +134,16 @@ class CordTest extends TestCase
     public function testSingular() {
         $this->assertEquals('child', $this->str->singular('children'));
     }
+
+    public function testWordLimit() {
+        $this->assertEquals('The quick brown fox ...', $this->str->wordLimit('The quick brown fox jumps over the lazy dog', 4));
+    }
+
+    public function testWordLimitAfter() {
+        $this->assertEquals('The quick brown fox.', $this->str->wordLimit('The quick brown fox jumps over the lazy dog', 4, '.'));
+    }
+
+    public function testWordCount() {
+        $this->assertEquals(9, $this->str->wordCount('The quick brown fox jumps over the lazy dog'));
+    }
 }
