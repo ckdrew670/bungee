@@ -160,6 +160,10 @@ class CordTest extends TestCase
     }
 
     public function testReplaceMultipleConsecutiveAgain() {
-        $this->assertEquals('The event will begin between 8:30 and 9:30.', $this->str->replace('The event will begin between ? and ?.', '?', ['8:30', '9:30']));
+        $this->assertEquals('The event will begin between 8:30 and 9:30 and ?.', $this->str->replace('The event will begin between ? and ? and ?.', '?', ['8:30', '9:30']));
+    }
+
+    public function testSlug() {
+        $this->assertEquals('hello-world-you-are-great', $this->str->slug('hello_world you are great/'));
     }
 }

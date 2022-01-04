@@ -208,4 +208,14 @@ class Cord
         }
         return Str::replace($original, $replacement, $string);
     }
+
+     /*
+    * SLUG
+    * Change a string to a slug friendly string
+    **/
+
+    public function slug($string) : string
+    {   
+        return Str::slug($string);
+    }
 }
