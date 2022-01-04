@@ -92,7 +92,7 @@ class CordTest extends TestCase
     }
 
     public function testContainsWithMultipleChars() {
-        $this->assertEquals(true, $this->str->contains('Hey there world', ['d', 'e']));
+        $this->assertEquals(true, $this->str->contains('Hey there world', ['d', 'g']));
     }
 
     public function testContainsWithFail() {
@@ -101,5 +101,17 @@ class CordTest extends TestCase
 
     public function testContainsAll() {
         $this->assertEquals(false, $this->str->contains('Hey there world', ['Hey', 'World'], true));
+    }
+
+    public function testKebab() {
+        $this->assertEquals('hello-world', $this->str->kebab('Hello world'));
+    }
+
+    public function testKebabWithCamel() {
+        $this->assertEquals('hello-world', $this->str->kebab('helloWorld'));
+    }
+
+    public function testKebabWithSnake() {
+        $this->assertEquals('hello-there-world', $this->str->kebab('hello_there_world'));
     }
 }

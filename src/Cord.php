@@ -117,4 +117,19 @@ class Cord
         }
         return Str::contains($string, $substrings);
     }
+
+    /*
+    * KEBAB
+    * Change a string to kebab case
+    **/
+
+    public function kebab($string) : string
+    {   
+        if(Str::contains($string, '_')) {
+            $hyphenated = preg_replace('/\_/', '-', $string);
+            return Str::kebab($hyphenated);
+        } else {
+            return Str::kebab($string);
+        }
+    }
 }
