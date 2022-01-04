@@ -166,4 +166,16 @@ class CordTest extends TestCase
     public function testSlug() {
         $this->assertEquals('hello-world-you-are-great', $this->str->slug('hello_world you are great/'));
     }
+
+    public function testSnake() {
+        $this->assertEquals('hello_there_world', $this->str->snake('Hello there world'));
+    }
+
+    public function testSnakeWithKebab() {
+        $this->assertEquals('hello_there_world', $this->str->snake('Hello-there-world'));
+    }
+
+    public function testSnakeWithCamel() {
+        $this->assertEquals('hello_there_world', $this->str->snake('HelloThereWorld'));
+    }
 }

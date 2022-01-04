@@ -218,4 +218,19 @@ class Cord
     {   
         return Str::slug($string);
     }
+
+     /*
+    * SNAKE
+    * Make string snake case
+    **/
+
+    public function snake($string) : string
+    {   
+        if(Str::contains($string, '-')) {
+            $hyphenated = preg_replace('/\-/', '_', $string);
+            return Str::snake($hyphenated);
+        } else {
+            return Str::snake($string);
+        }
+    }
 }
