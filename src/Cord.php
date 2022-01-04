@@ -110,7 +110,7 @@ class Cord
     * Check if a string contains a substring
     **/
 
-    public function contains($string, $substrings, $all = false) : string
+    public function contains($string, $substrings, $all = false) : bool
     {   
         if($all) {
             return Str::containsAll($string, $substrings);
@@ -138,7 +138,7 @@ class Cord
     * Returns the length of a string
     **/
 
-    public function length($string) : string
+    public function length($string) : int
     {   
         return strlen($string);
     }
@@ -194,5 +194,18 @@ class Cord
     public function wordCount($string) : string
     {   
         return str_word_count($string);
+    }
+
+    /*
+    * REPLACE
+    * Replaces a substring with another substring
+    **/
+
+    public function replace($string, $original, $replacement) : string
+    {   
+        if(is_array($replacement)) {
+            return Str::replaceArray($original, $replacement, $string);
+        }
+        return Str::replace($original, $replacement, $string);
     }
 }

@@ -146,4 +146,20 @@ class CordTest extends TestCase
     public function testWordCount() {
         $this->assertEquals(9, $this->str->wordCount('The quick brown fox jumps over the lazy dog'));
     }
+
+    public function testReplace() {
+        $this->assertEquals('Hello Miss World', $this->str->replace('Hello there World', 'there', 'Miss'));
+    }
+
+    public function testReplaceAllInstances() {
+        $this->assertEquals('a quick brown fox jumped over a lazy dog', $this->str->replace('the quick brown fox jumped over the lazy dog', 'the', 'a'));
+    }
+
+    public function testReplaceMultipleConsecutive() {
+        $this->assertEquals('a quick brown fox jumped over one lazy dog', $this->str->replace('the quick brown fox jumped over the lazy dog', 'the', ['a', 'one']));
+    }
+
+    public function testReplaceMultipleConsecutiveAgain() {
+        $this->assertEquals('The event will begin between 8:30 and 9:30.', $this->str->replace('The event will begin between ? and ?.', '?', ['8:30', '9:30']));
+    }
 }
