@@ -15,52 +15,52 @@ class CordTest extends TestCase
         $this->str = new Cord();
     }
 
-    public function testJoinUp() {
-        $this->assertEquals("Hello world", $this->str->joinUp('Hello', ' world'));
+    public function testJoin() {
+        $this->assertEquals("Hello world", $this->str->join('Hello', ' world'));
     }
 
-    public function testgoHalvesWithoutOptions() {
-        $this->assertEquals(['abcdef', 'ghijkl'], $this->str->goHalves('abcdefghijkl'));
+    public function testSplitWithoutOptions() {
+        $this->assertEquals(['abcdef', 'ghijkl'], $this->str->split('abcdefghijkl'));
     }
 
-    public function testgoHalves() {
-        $this->assertEquals(['Hello', 'Worlds!'], $this->str->goHalves('Hello Worlds!', 6, true));
+    public function testSplit() {
+        $this->assertEquals(['Hello', 'Worlds!'], $this->str->split('Hello Worlds!', 6, true));
     }
 
-    public function testStickToFront() {
-        $this->assertEquals('Hello, Hello world', $this->str->stickToFront('Hello world', 'Hello, '));
+    public function testPrepend() {
+        $this->assertEquals('Hello, Hello world', $this->str->prepend('Hello world', 'Hello, '));
     }
 
-    public function testStickToEnd() {
-        $this->assertEquals('Hello worldy', $this->str->stickToEnd('Hello world', 'y'));
+    public function testAppend() {
+        $this->assertEquals('Hello worldy', $this->str->append('Hello world', 'y'));
     }
 
-    public function testShout() {
-        $this->assertEquals('HELLO WORLD', $this->str->shout('Hello world'));
+    public function testUpper() {
+        $this->assertEquals('HELLO WORLD', $this->str->upper('Hello world'));
     }
 
-    public function testWhisper() {
-        $this->assertEquals('hello world', $this->str->whisper('Hello woRld'));
+    public function testLower() {
+        $this->assertEquals('hello world', $this->str->lower('Hello woRld'));
     }
 
-    public function testgetOuttaHere() {
-        $this->assertEquals('The quick brown fo', $this->str->getOuttaHere('The quick brown fox', 'x'));
+    public function testremove() {
+        $this->assertEquals('The quick brown fo', $this->str->remove('The quick brown fox', 'x'));
     }  
 
-    public function testgetOuttaHereWithLongerString() {
-        $this->assertEquals('The quick brown fox', $this->str->getOuttaHere('The quick jumps brown fox jumps', ' jumps'));
+    public function testremoveWithLongerString() {
+        $this->assertEquals('The quick brown fox', $this->str->remove('The quick jumps brown fox jumps', ' jumps'));
     } 
 
-    public function testgetOuttaHereWithNumber() {
-        $this->assertEquals('The uick brown fox', $this->str->getOuttaHere('The quick brown fox', 5));
+    public function testremoveWithNumber() {
+        $this->assertEquals('The uick brown fox', $this->str->remove('The quick brown fox', 5));
     } 
 
-    public function testgetOuttaHereWithNumberRange() {
-        $this->assertEquals('The brown fox', $this->str->getOuttaHere('The quick brown fox', 5, 10));
+    public function testremoveWithNumberRange() {
+        $this->assertEquals('The brown fox', $this->str->remove('The quick brown fox', 5, 10));
     } 
 
-    public function testgetOuttaHereRemovesAllInstances() {
-        $this->assertEquals('The quick brwn fx', $this->str->getOuttaHere('The quick brown fox', 'o'));
+    public function testremoveRemovesAllInstances() {
+        $this->assertEquals('The quick brwn fx', $this->str->remove('The quick brown fox', 'o'));
     }
 
     public function testCapitalise() {

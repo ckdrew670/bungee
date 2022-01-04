@@ -12,21 +12,21 @@ class Cord
     }
 
     /* 
-    * JOIN UP 
+    * JOIN
     * Concatenate two strings
     **/
 
-    public function joinUp($first, $second) : string
+    public function join($first, $second) : string
     {
         return $first . $second;
     }
 
     /* 
-    * GO HALVES
+    * SPLIT
     * Split a string into two array items at a given character, option to remove the character where the strings are split. Without options, string will be split in two exactly
     **/
 
-    public function goHalves($string, $splitter = false, $removeSplitter = false) : array
+    public function split($string, $splitter = false, $removeSplitter = false) : array
     {
         $strOne = $splitter ? ($removeSplitter ? substr((substr($string, 0, $splitter)), 0, -1) : substr($string, 0, $splitter)) : substr($string, 0, strlen($string)/2);
         $strTwo = $splitter ? substr($string, $splitter) : substr($string, strlen($string)/2);
@@ -34,51 +34,51 @@ class Cord
     }
 
     /* 
-    * STICK TO FRONT
+    * PREPEND
     * Prepend a string to another string
     **/
 
-    public function stickToFront($string, $front) : string
+    public function prepend($string, $front) : string
     {
         return $front . $string;
     }
 
     /* 
-    * STICK TO END
+    * APPEND
     * Append a string to another string
     **/
 
-    public function stickToEnd($string, $end) : string
+    public function append($string, $end) : string
     {
         return $string . $end;
     }
 
     /* 
-    * SHOUT
+    * UPPER
     * Make string uppercase
     **/
 
-    public function shout($string) : string
+    public function upper($string) : string
     {
         return strtoupper($string);
     }
 
     /* 
-    * WHISPER
+    * LOWER
     * Make string lowercase
     **/
 
-    public function whisper($string) : string
+    public function lower($string) : string
     {
         return strtolower($string);
     }
 
     /*
-    * GET OUTTA HERE
+    * REMOVE
     * Remove all instances of a given string or character, or remove a character/word based on placement in string
     **/
 
-    public function getOuttaHere($string, $removeMe, $upper = false) : string
+    public function remove($string, $removeMe, $upper = false) : string
     {
         return is_string($removeMe) ? str_replace($removeMe, '', $string) : ($upper ? substr($string, 0, $removeMe - 1) . substr($string, $upper, strlen($string) - $removeMe) : substr($string, 0, $removeMe - 1) . substr($string, $removeMe, strlen($string) - $removeMe));
     }
