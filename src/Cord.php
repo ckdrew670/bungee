@@ -110,8 +110,11 @@ class Cord
     * Check if a string contains a substring
     **/
 
-    public function contains($string, $substrings) : string
-    {
+    public function contains($string, $substrings, $all = false) : string
+    {   
+        if($all) {
+            return Str::containsAll($string, $substrings);
+        }
         return Str::contains($string, $substrings);
     }
 }

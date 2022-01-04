@@ -98,4 +98,8 @@ class CordTest extends TestCase
     public function testContainsWithFail() {
         $this->assertEquals(false, $this->str->contains('Hey there world', 'donkey'));
     }
+
+    public function testContainsAll() {
+        $this->assertEquals(false, $this->str->contains('Hey there world', ['Hey', 'World'], true));
+    }
 }
