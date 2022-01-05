@@ -186,4 +186,12 @@ class CordTest extends TestCase
     public function testPrependWithCheck() {
         $this->assertEquals('/path/to/file/', $this->str->append('/path/to/file/', '/', true));
     }
+
+    public function testURLencode() {
+        $this->assertEquals('hello-world%2F%3F', $this->str->urlEncode('hello-world/?'));
+    }
+
+    public function testURLdecode() {
+        $this->assertEquals('hello-world/?', $this->str->urlDecode('hello-world%2F%3F'));
+    }
 }

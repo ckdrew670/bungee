@@ -239,4 +239,24 @@ class Cord
             return Str::snake($string);
         }
     }
+
+     /*
+    * URLENCODE
+    * Encode special characters for URL
+    **/
+
+    public function urlEncode($string) : string
+    {   
+        return urlencode($string);
+    }
+
+      /*
+    * URLDECODE
+    * Dencode special characters for URL
+    **/
+
+    public function urlDecode($string) : string
+    {   
+        return urldecode($string);
+    }
 }
