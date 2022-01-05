@@ -259,4 +259,14 @@ class Cord
     {   
         return urldecode($string);
     }
+
+    /*
+    * COUNT
+    * Count the number of times a substring appears
+    **/
+
+    public function count($string, $substring) : string
+    {   
+        return Str::substrCount($string, $substring);
+    }
 }

@@ -194,4 +194,8 @@ class CordTest extends TestCase
     public function testURLdecode() {
         $this->assertEquals('hello-world/?', $this->str->urlDecode('hello-world%2F%3F'));
     }
+
+    public function testCount() {
+        $this->assertEquals(3, $this->str->count('The quick brown fox jumps over the lazy brown dog', 'e'));
+    }
 }
